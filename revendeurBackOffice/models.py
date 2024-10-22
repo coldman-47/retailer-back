@@ -16,3 +16,9 @@ class Product(models.Model):
     owner = models.CharField(max_length=20, blank=True, default='tig_orig')
     stock = models.IntegerField(default=0)
     unit_sold = models.IntegerField(default=0)
+    
+class Operation(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    product = models.ForeignKey(Product, on_delete=models.DO_NOTHING)
+    quantity = models.IntegerField(default=0)
+    price = models.FloatField(default=0)
