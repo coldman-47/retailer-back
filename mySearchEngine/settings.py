@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'monTiGMagasin.apps.MontigmagasinConfig',
 #...end of TME3 (controle1)...#
     'revendeurBackOffice.apps.RevendeurbackofficeConfig',
-    'corsheaders'
+    'corsheaders',
+    'rest_framework_simplejwt'
 ###############################
 ]
 
@@ -137,3 +138,9 @@ STATIC_URL = '/static/'
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:4200',
 ]
+ 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
